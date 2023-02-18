@@ -12,6 +12,18 @@ const connect = function(data) {
     console.log("Successfully connected to server");
     conn.write("Name: CRJ");
   });
+  conn.on("connect", () => {
+    setTimeout(() => {
+      // conn.write("Move: down");
+      // conn.write("Move: down");
+      // conn.write("Move: down");
+    }, 500);
+
+    setInterval(() => {
+      // conn.write("Move: left");
+    }, 50);
+    
+  });
   return conn;
 };
 
