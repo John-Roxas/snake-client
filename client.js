@@ -1,9 +1,10 @@
 const net = require("net");
+const { IP, PORT } = require('./constants');
 
-const connect = function(data) {
+const connect = function() {
   const conn = net.createConnection({
-    host: "localhost",
-    port: 50541
+    host: IP,
+    port: PORT
   });
 
   
@@ -12,25 +13,12 @@ const connect = function(data) {
     console.log("Successfully connected to server");
     conn.write("Name: CRJ");
   });
-  conn.on("connect", () => {
-    setTimeout(() => {
-      // conn.write("Move: down");
-      // conn.write("Move: down");
-      // conn.write("Move: down");
-    }, 500);
-
-    setInterval(() => {
-      // conn.write("Move: left");
-    }, 50);
-    
-  });
   return conn;
 };
 
 console.log("Connecting ...");
 
-const client = {
+
+module.exports = {
   connect: connect
 };
-
-module.exports = client;
