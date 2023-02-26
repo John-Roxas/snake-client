@@ -1,8 +1,7 @@
-let connection;
+
 const { moveKeys } = require('./constants');
 
 const setupInput = function(conn) {
-  connection = conn;
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding("utf8");
@@ -14,9 +13,10 @@ const setupInput = function(conn) {
       process.exit();
     }
 
-    // Movement keys mapped to WASD. Actual functionality is stored in constants.js.
+    // Movement keys mapped to WASD. Actual commands are stored in constants.js.
     moveKeys(key, conn);
     
+    //
     if (key === 't') {
       conn.write("Say: Time to die");
     }
