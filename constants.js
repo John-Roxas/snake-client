@@ -1,19 +1,21 @@
 const IP = "localhost";
 const PORT = 50541;
-const moveKeys = function(key, conn) {
+const moveKeys = function(key, conn, direction) {
   switch (key) {
-  case 'w': conn.write("Move: up");
+  case 'w':
+    conn.write("Move: up");
     break;
-  case 'a': conn.write("Move: left");
+  case 'a':
+    conn.write("Move: left");
     break;
-  case 's': conn.write("Move: down");
+  case 's':
+    conn.write("Move: down");
     break;
-  case 'd': conn.write("Move: right");
+  case 'd':
+    conn.write("Move: right");
     break;
   }
 };
-
-
 
 module.exports = {
   IP,
