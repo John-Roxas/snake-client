@@ -1,6 +1,6 @@
 const IP = "localhost";
 const PORT = 50541;
-const moveKeys = function(key, conn, direction) {
+const moveKeys = function(key, conn) {
   switch (key) {
   case 'w':
     conn.write("Move: up");
